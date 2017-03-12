@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+    <html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>About Daria</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script language="javascript">
+
+    var tickertapeform
+    tt_speed=350
+    tt_len=35
+    tt_space="                                                                                                    "
+    tt_tid = 0;
+    tt_message="."
+    tt_c= -tt_len;
+
+    function move() {
+
+      cend=Math.min(tt_c+tt_len,tt_message.length)
+
+      if (tt_c <0)
+        cstart=0;
+      else
+        cstart=tt_c;
+      if (tt_c < 0)
+        tt_f.scroll.value=tt_space.substring(0,-tt_c) + tt_message.substring(cstart,cend)
+      else
+        tt_f.scroll.value=tt_message.substring(cstart,cend)
+      tt_c = tt_c +1;
+      if (tt_c == tt_message.length ) tt_c = -tt_len;
+      tt_tid=window.setTimeout("move()",tt_speed);
+    }
+
+    function tt_start(x) {
+      tt_f=x
+      tt_tid=window.setTimeout("move()",tt_speed);
+    }
+
+    function tt_cleartid() {
+      window.clearTimeout(tt_tid);
+    }
+
+    function ticker(m,l,s)
+    {
+    tt_message=m
+    tt_len=l
+    tt_speed=s
+    document.write('<FORM name=tickertapeform><input name=scroll size=')
+    document.write(tt_len)
+    document.write(' value=""></FORM>')
+    tt_start(document.tickertapeform);
+
+    }
+    // for some reason on some pages this crashes netscape
+
+    function ticker(m)
+
+    {
+    tt_message=m
+    tt_len=35
+    tt_speed=250
+    document.write('<FORM name=tickertapeform><input name=scroll size=35></FORM>');
+    tt_start(document.tickertapeform);
+
+    }
+
+    // end-->next script
+    </script>
+
+    <script>
+    function myFunction() {
+        document.getElementById("demo").innerHTML = "Daria's original design was created by Bill Peckmann while working for J.J. Sedelmaier Productions during Beavis and Butt-Head's first season. During production of Beavis and Butt-Head's final seasons, MTV representatives approached story editor Glenn Eichler, offering a spin-off series for Daria.";
+        document.getElementById("button1").innerHTML = "That's all."
+    }
+    </script>
+
+    <script>
+
+    var myarray = ['this','is','an','array'];
+    function arrayPrint()
+{
+
+    for(i=0; i<myarray.length;i++)
+    return myarray;
+
+}
+
+
+
+    </script>
+
+
+</head>
+    <!-- Your page here (can include more script tags) -->
+
+    <Body>
+
+
+<hr>
+<img src="fun.jpg" alt= "daria" height="400" width = "">
+  <img src="friends.jpg" alt= "daria" height="400" width = "">
+  <script language="javascript">
+  ticker ("Hello, Sick Sad World");
+  </script>
+<h1>Daria</h1>
+<p style="color:green;" id="demo"> The people of Lawndale just don't get Daria Morgendorffer. She's cool with that...<br>
+   Whatever. What Daria lacks in enthusiasm, she makes up for with sarcasm. </p>
+
+<button type="button" id=button1 onclick="myFunction()">Who is Daria?</button>
+<br>
+<img src="shakesphere.jpeg" alt= "daria" height="400" width = "">
+<img src="sarcasm.gif" alt= "daria" height="400" width = "">
+
+<img src="personlity.jpg" alt= "daria" height="400" width = "">
+<img src="van.jpg" alt= "daria" height="400" width = "">
+
+<p style="color:green;" id="demo2"> We are nowhere, and it's now.</p>
+<button id=button2 onclick="document.getElementById('demo2').innerHTML = Date()">The time is?</button>
+<button id=button2 onclick="document.getElementById('demo3').innerHTML = arrayPrint()">array here!</button>
+<p style="color:green;" id="demo3"> We are nowhere, and it's now.</p>
+<br>
+
+<img src="crisis.gif" alt= "daria" height="400" width = "">
+<img src="darn.gif" alt= "daria" height="400" width = "">
+
+<img src="computer.gif" alt= "daria" height="400" width = "">
+<img src="giphy.gif" alt= "daria" height="400" width = "">
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
